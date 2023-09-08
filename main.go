@@ -21,9 +21,10 @@ type Response struct {
 func main() {
 	router := gin.Default()
 
-	router.GET("/hng/internship/first-task/:slack_name/:track", func(ctx *gin.Context) {
-		slack_name := ctx.Param("slack_name")
-		track := ctx.Param("track")
+	router.GET("/api", func(ctx *gin.Context) {
+	
+		slack_name := ctx.Query("slack_name")
+		track := ctx.Query("track")
 
 		res := &Response{
 			Slack_Name:      slack_name,
