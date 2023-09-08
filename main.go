@@ -10,7 +10,7 @@ import (
 type Response struct {
 	Slack_Name		string		`json:"slack_name"`
 	Current_Day		string		`json:"current_day"`
-	UTC_Time		time.Time	`json:"utc_time"`
+	UTC_Time		string		`json:"utc_time"`
 	Track			string		`json:"track"`
 	Github_File_URL	string		`json:"github_file_url"`
 	Github_Repo_URL	string		`json:"github_repo_url"`
@@ -29,7 +29,7 @@ func main() {
 		res := &Response{
 			Slack_Name:      slack_name,
 			Current_Day:     time.Now().Weekday().String(),
-			UTC_Time:        time.Now().UTC(),
+			UTC_Time:        time.Now().UTC().Local().Format("2006-01-02T15:04:05Z"),
 			Track:           track,
 			Github_File_URL: "https://github.com/ashiruhabeeb/hng-internship/blob/main/main.go",
 			Github_Repo_URL: "https://github.com/ashiruhabeeb/hng-internship",
