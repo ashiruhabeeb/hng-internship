@@ -12,10 +12,9 @@ type Response struct {
 	Current_Day		string		`json:"current_day"`
 	UTC_Time		string		`json:"utc_time"`
 	Track			string		`json:"track"`
-	Github_File_URL	string		`json:"github_file_url"`
-	Github_Repo_URL	string		`json:"github_repo_url"`
-	Status_Code		int			`json:"status_code"`
-
+	Github_File_URL		string		`json:"github_file_url"`
+	Github_Repo_URL		string		`json:"github_repo_url"`
+	Status_Code		int		`json:"status_code"`
 }
 
 func main() {
